@@ -1,6 +1,6 @@
 ## Practical experiments with VM live migration based on [cloud-hypervisor](https://github.com/cloud-hypervisor/cloud-hypervisor)
 
-TL;DR
+### TL;DR
 
 - set real values for variables `VXLAN_HOST_1` and `VXLAN_HOST_2` in [network_setup_1.sh](network_setup_1.sh), [network_setup_2.sh](network_setup_2.sh) and [vm_send.sh](vm_send.sh) files
 - run [network_setup_1.sh](network_setup_1.sh) on host #1
@@ -13,7 +13,7 @@ TL;DR
 - run [vm_send.sh](vm_send.sh) on host #1 (in another terminal), wait when live migration finish
 - check VM migrated on host #2 (you should see ping continues there)
 
-Tear down
+### Tear down
 
 - exit from VM console (it will terminate VM by `poweroff` command)
 - run [network_clean_1.sh](network_clean_1.sh) on host #1
