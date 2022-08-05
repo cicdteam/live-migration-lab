@@ -1,0 +1,24 @@
+#!/bin/sh
+
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+mount -t proc proc /proc
+mount -t sysfs sysfs /sys
+ln -s /proc/self/fd /dev/fd
+
+ip link set up dev lo
+ip link set up dev eth0
+ip address add 10.1.1.42/24 dev eth0
+ip route add default via 10.1.1.1 dev eth0
+echo 'nameserver 8.8.8.8' > /etc/resolv.conf
+echo '127.0.0.1 localhost.localdomain localhost' > /etc/hosts
+
+echo; cat /etc/os-release | grep PRETTY_NAME | cut -d'"' -f2
+
+echo -e "\nBoot took $(cut -d' ' -f1 /proc/uptime) seconds\n"
+
+echo "Start console"
+/sbin/getty -n -l /bin/sh 115200 /dev/console
+
+echo "Powering off."
+poweroff -f
