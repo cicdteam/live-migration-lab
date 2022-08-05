@@ -2,7 +2,7 @@
 
 TL;DR
 
-- set real values for variables `VXLAN_HOST_1` and `VXLAN_HOST_2` in [network_setup_1.sh](network_setup_1.sh), [network_setup_2.sh](network_setup_2.sh) files
+- set real values for variables `VXLAN_HOST_1` and `VXLAN_HOST_2` in [network_setup_1.sh](network_setup_1.sh), [network_setup_2.sh](network_setup_2.sh) and [vm_send.sh](vm_send.sh) files
 - run [network_setup_1.sh](network_setup_1.sh) on host #1
 - run [network_setup_2.sh](network_setup_2.sh) on host #2
 - on host #1 build linux kernel adopted for cloud-hypervisor [scripts/build_kernel.sh](scripts/build_kernel.sh) (it will create `/opt/clh/images/vmlinux `)

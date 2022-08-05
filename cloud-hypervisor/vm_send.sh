@@ -1,7 +1,7 @@
 #!/bin/bash
 
-VXLAN_HOST_1="65.108.11.9"
-VXLAN_HOST_2="65.21.198.96"
+VXLAN_HOST_1="x.x.x.x" # put here real IP address
+VXLAN_HOST_2="y.y.y.y" # put here real IP address
 
 echo "$(date +"%Y-%m-%d %H:%M:%S") cleanup sockets"
 test -S /tmp/clh-vm-migration && sudo rm -f /tmp/clh-vm-migration
